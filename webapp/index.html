@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#6C5CE7">    
+<meta name="theme-color" content="#7c3aed">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -11,7 +11,13 @@
 <body>
 
 <header>
-  <h1>🍲 Sopa da Roxa</h1>
+  <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+    <h1>🍲 Sopa da Roxa</h1>
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <span id="usuario-info" style="color: rgba(255,255,255,.75); font-size: 0.9rem;"></span>
+      <button onclick="AUTH.logout()" style="background: rgba(255,255,255,.15); border: none; color: white; padding: 6px 12px; border-radius: 20px; cursor: pointer; font-size: 0.85rem;">🚪 Sair</button>
+    </div>
+  </div>
   <nav>
     <a href="/" class="active">Mesas</a>
     <a href="/delivery">Delivery</a>
@@ -186,6 +192,13 @@
   </div>
 </div>
 
+<script src="auth-client.js"></script>
 <script src="script.js"></script>
+<script>
+  // Exibir informações do usuário
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('usuario-info').textContent = AUTH.exibirUsuario();
+  });
+</script>
 </body>
 </html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🍲 Sopa da Roxa — Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .login-container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 420px;
+      overflow: hidden;
+    }
+
+    .login-header {
+      background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+      color: white;
+      padding: 40px 30px;
+      text-align: center;
+    }
+
+    .login-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 5px;
+    }
+
+    .login-header p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .login-body {
+      padding: 40px 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 8px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1.5px solid #e9d5ff;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+      background: white;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #7c3aed;
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+      background: #f9f7ff;
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-login:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
+    }
+
+    .btn-login:active {
+      transform: translateY(0);
+    }
+
+    .credentials-box {
+      background: #f9f7ff;
+      border: 1px solid #e9d5ff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-top: 25px;
+      font-size: 0.85rem;
+    }
+
+    .credentials-box h3 {
+      color: #7c3aed;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .credential-item {
+      color: #6b7280;
+      margin: 6px 0;
+      word-break: break-all;
+    }
+
+    .error-message {
+      background: #fee2e2;
+      color: #dc2626;
+      border: 1px solid #fecaca;
+      border-radius: 6px;
+      padding: 12px;
+      margin-bottom: 20px;
+      display: none;
+      font-size: 0.9rem;
+    }
+
+    .loading {
+      display: none;
+      text-align: center;
+      color: #7c3aed;
+      font-weight: 600;
+    }
+
+    @media (max-width: 480px) {
+      .login-header {
+        padding: 30px 20px;
+      }
+
+      .login-header h1 {
+        font-size: 2rem;
+      }
+
+      .login-body {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-container">
+  <div class="login-header">
+    <h1>🍲 SOPA DA ROXA</h1>
+    <p>Sistema de Pedidos & Delivery</p>
+  </div>
+
+  <div class="login-body">
+    <div class="error-message" id="errorMessage"></div>
+
+    <div class="loading" id="loading">Autenticando...</div>
+
+    <form id="loginForm" onsubmit="fazerLogin(event)">
+      <div class="form-group">
+        <label for="email">📧 E-mail</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Ex: admin@sopadaroxa.com"
+          required
+          autofocus
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="senha">🔐 Senha</label>
+        <input
+          type="password"
+          id="senha"
+          name="senha"
+          placeholder="Sua senha"
+          required
+        >
+      </div>
+
+      <button type="submit" class="btn-login">🔓 ENTRAR</button>
+    </form>
+
+    <div class="credentials-box">
+      <h3>👤 Credenciais Padrão:</h3>
+      <div class="credential-item"><strong>🔑 Admin:</strong> admin@sopadaroxa.com / admin123</div>
+      <div class="credential-item"><strong>🍽 Garçom:</strong> garcom@sopadaroxa.com / garcom123</div>
+      <div class="credential-item"><strong>🍳 Cozinha:</strong> cozinha@sopadaroxa.com / cozinha123</div>
+      <div class="credential-item"><strong>🚴 Entregador:</strong> entregador@sopadaroxa.com / entregador123</div>
+    </div>
+  </div>
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>

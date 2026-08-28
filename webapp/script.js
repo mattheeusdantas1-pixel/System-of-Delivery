@@ -38,7 +38,9 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 // ========== CARDÁPIO ==========
 async function carregarCardapio() {
     try {
-        const r = await fetch(`${API}/api/cardapio`);
+        const r = await fetch(`${API}/api/cardapio`, {
+            headers: AUTH.obterHeaders()
+        });
         cardapio = await r.json();
     } catch (e) { console.error('Erro cardápio', e); }
 }
@@ -46,7 +48,9 @@ async function carregarCardapio() {
 // ========== MESAS ==========
 async function carregarMesas() {
     try {
-        const r = await fetch(`${API}/api/mesas`);
+        const r = await fetch(`${API}/api/mesas`, {
+            headers: AUTH.obterHeaders()
+        });
         const mesas = await r.json();
         const grid = document.getElementById('mesas-grid');
         grid.innerHTML = '';
