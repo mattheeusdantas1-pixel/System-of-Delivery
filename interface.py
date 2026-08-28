@@ -41,18 +41,18 @@ def get_app_path():
 def get_data_path(relative_path):
     return os.path.join(get_app_path(), relative_path)
 
-# ========== CORES ==========
-PRIMARIA      = "#6C5CE7"
-PRIMARIA_ESC  = "#5B4BC4"
-PRIMARIA_CLAR = "#A29BFE"
-SECUNDARIA    = "#FD79A8"
-FUNDO         = "#F9F9F9"
-FUNDO_CARD    = "#FFFFFF"
-TEXTO         = "#2D3436"
-TEXTO_SUAVE   = "#636E72"
-BORDA         = "#DFE6E9"
-SUCESSO       = "#00B894"
-AVISO         = "#E17055"
+# ========== CORES - TEMA SOPA DA ROXA ==========
+PRIMARIA      = "#7c3aed"
+PRIMARIA_ESC  = "#6d28d9"
+PRIMARIA_CLAR = "#ede9fe"
+SECUNDARIA    = "#ec4899"
+FUNDO         = "#f9f7ff"
+FUNDO_CARD    = "#ffffff"
+TEXTO         = "#1f2937"
+TEXTO_SUAVE   = "#6b7280"
+BORDA         = "#e9d5ff"
+SUCESSO       = "#10b981"
+AVISO         = "#f97316"
 
 def configurar_estilo():
     estilo = ttk.Style()
