@@ -25,7 +25,8 @@
       "Bash(git remote *)",
       "Bash(git push *)",
       "Bash(git commit -m 'Adicionar README.md completo com documentação do projeto *)",
-      "Bash(git commit -m 'Atualizar cores da interface Tkinter para tema roxo Sopa da Roxa *)"
+      "Bash(git commit -m 'Atualizar cores da interface Tkinter para tema roxo Sopa da Roxa *)",
+      "Bash(git commit -m 'Adicionar scripts e documentação para compilação em EXE *)"
     ]
   }
 }
