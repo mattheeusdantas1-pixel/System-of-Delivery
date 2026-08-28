@@ -101,9 +101,13 @@ class ItemQuantidadeDelivery(tk.Frame):
 
 # ========== CLASSE PRINCIPAL ==========
 class Sistema:
-    def __init__(self, root):
+    def __init__(self, root, usuario=None):
         self.root = root
-        self.root.title("🍲 Sopa da Roxa - PDV")
+        self.usuario = usuario
+
+        # Definir título com nome do usuário
+        titulo = f"🍲 Sopa da Roxa - PDV — {usuario['nome']}" if usuario else "🍲 Sopa da Roxa - PDV"
+        self.root.title(titulo)
         self.root.geometry("1100x800")
         self.root.minsize(800, 600)
         self.root.configure(bg=FUNDO)
@@ -129,36 +133,65 @@ class Sistema:
         y = (self.root.winfo_screenheight() // 2) - (h // 2)
         self.root.geometry(f"{w}x{h}+{x}+{y}")
 
+    def tem_acesso(self, modulo: str) -> bool:
+        """Verifica se usuário tem acesso ao módulo"""
+        from auth import tem_permissao
+        if not self.usuario:
+            return False
+        return tem_permissao(self.usuario['perfil'], modulo)
+
     def criar_interface(self):
         top_bar = tk.Frame(self.root, bg=PRIMARIA, height=60)
         top_bar.pack(fill="x", side="top")
         top_bar.pack_propagate(False)
-        tk.Label(top_bar, text="🍲 Sopa da Roxa — Sistema de Pedidos", font=("Segoe UI", 16, "bold"), bg=PRIMARIA, fg="white").pack(pady=15)
+
+        info_usuario = f"👤 {self.usuario['nome']} ({self.usuario['perfil'].upper()})" if self.usuario else ""
+        tk.Label(top_bar, text=f"🍲 Sopa da Roxa — {info_usuario}", font=("Segoe UI", 14, "bold"), bg=PRIMARIA, fg="white").pack(pady=15)
 
         self.notebook = ttk.Notebook(self.root)
         self.notebook.pack(fill="both", expand=True, padx=10, pady=10)
 
-        # Aba Delivery
-        self.frame_pedido = tk.Frame(self.notebook, bg=FUNDO)
-        self.notebook.add(self.frame_pedido, text="  📝 Delivery  ")
-        self.construir_aba_pedido()
+        # Aba Delivery (Garçom, Entregador, Admin)
+        if self.tem_acesso('delivery'):
+            self.frame_pedido = tk.Frame(self.notebook, bg=FUNDO)
+            self.notebook.add(self.frame_pedido, text="  📝 Delivery  ")
+            self.construir_aba_pedido()
 
-        # Aba Mesas
-        self.frame_mesas = self.criar_frame_mesas()
-        self.notebook.add(self.frame_mesas, text="  🪑 Mesas  ")
+        # Aba Mesas (Garçom, Admin)
+        if self.tem_acesso('mesas'):
+            self.frame_mesas = self.criar_frame_mesas()
+            self.notebook.add(self.frame_mesas, text="  🪑 Mesas  ")
 
-        # Aba Cozinha
-        self.frame_cozinha = self.criar_frame_cozinha()
-        self.notebook.add(self.frame_cozinha, text="  🍳 Cozinha  ")
+        # Aba Cozinha (Cozinha, Admin)
+        if self.tem_acesso('cozinha'):
+            self.frame_cozinha = self.criar_frame_cozinha()
+            self.notebook.add(self.frame_cozinha, text="  🍳 Cozinha  ")
 
-        # Aba Histórico
-        self.frame_historico = tk.Frame(self.notebook, bg=FUNDO)
-        self.notebook.add(self.frame_historico, text="  📜 Histórico  ")
-        self.construir_aba_historico()
+        # Aba Histórico (Admin)
+        if self.tem_acesso('historico'):
+            self.frame_historico = tk.Frame(self.notebook, bg=FUNDO)
+            self.notebook.add(self.frame_historico, text="  📜 Histórico  ")
+            self.construir_aba_historico()
+
+        # Aba Entregas (Admin)
+        if self.tem_acesso('entregas'):
+            self.frame_entregas = tk.Frame(self.notebook, bg=FUNDO)
+            self.notebook.add(self.frame_entregas, text="  🚴 Entregas  ")
+            self.construir_aba_entregas()
 
         self.status_bar = tk.Frame(self.root, bg=PRIMARIA_CLAR, height=25)
         self.status_bar.pack(side="bottom", fill="x")
-        self.status_label = tk.Label(self.status_bar, textvariable=self.status_impressora, bg=PRIMARIA_CLAR, fg=TEXTO, font=("Segoe UI", 9), anchor="w")
+
+        # Status bar com informação de usuário
+        info_status = f"👤 {self.usuario['perfil'].upper()}" if self.usuario else ""
+        self.status_label = tk.Label(
+            self.status_bar,
+            text=f"{info_status} | " + "🔍 Verificando impressora...",
+            bg=PRIMARIA_CLAR,
+            fg=TEXTO,
+            font=("Segoe UI", 9),
+            anchor="w"
+        )
         self.status_label.pack(side="left", padx=10)
 
     # ------------------------------------------------------------
@@ -1368,6 +1401,122 @@ class Sistema:
             webbrowser.open(link)
         else:
             messagebox.showwarning("Aviso", "Nenhum cupom selecionado.")
+
+    # ------------------------------------------------------------
+    # ABA ENTREGAS (ADMIN)
+    # ------------------------------------------------------------
+    def construir_aba_entregas(self):
+        """Construir aba de cálculo de entregas do dia"""
+        canvas = tk.Canvas(self.frame_entregas, highlightthickness=0, bg=FUNDO)
+        scrollbar = ttk.Scrollbar(self.frame_entregas, orient="vertical", command=canvas.yview)
+        scrollable_frame = tk.Frame(canvas, bg=FUNDO)
+        scrollable_frame.bind("<Configure>", lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
+        canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
+        canvas.configure(yscrollcommand=scrollbar.set)
+        canvas.pack(side="left", fill="both", expand=True)
+        scrollbar.pack(side="right", fill="y")
+
+        # Título
+        tk.Label(
+            scrollable_frame,
+            text="💰 CÁLCULO DE ENTREGAS DO DIA",
+            font=("Segoe UI", 14, "bold"),
+            bg=FUNDO,
+            fg=PRIMARIA
+        ).pack(padx=20, pady=(20, 10))
+
+        # Data
+        frame_data = tk.Frame(scrollable_frame, bg=FUNDO)
+        frame_data.pack(fill="x", padx=20, pady=10)
+        tk.Label(frame_data, text="📅 Data:", bg=FUNDO, fg=TEXTO, font=("Segoe UI", 10, "bold")).pack(side="left")
+        self.entry_data_entregas = ttk.Entry(frame_data, width=20)
+        self.entry_data_entregas.pack(side="left", padx=10)
+
+        from datetime import date
+        self.entry_data_entregas.insert(0, str(date.today()))
+
+        tk.Button(
+            frame_data,
+            text="🔄 Calcular",
+            bg=PRIMARIA,
+            fg="white",
+            font=("Segoe UI", 10, "bold"),
+            relief="flat",
+            command=self.calcular_entregas_dia
+        ).pack(side="left", padx=5)
+
+        # Resultado
+        frame_resultado = ttk.LabelFrame(scrollable_frame, text="📊 Resumo do Dia")
+        frame_resultado.pack(fill="both", expand=True, padx=20, pady=20)
+
+        self.text_entregas = tk.Text(
+            frame_resultado,
+            wrap="word",
+            font=("Consolas", 10),
+            bg=FUNDO_CARD,
+            fg=TEXTO,
+            relief="flat",
+            height=20
+        )
+        self.text_entregas.pack(fill="both", expand=True, padx=10, pady=10)
+        self.text_entregas.insert("1.0", "Selecione uma data e clique em Calcular")
+        self.text_entregas.config(state="disabled")
+
+    def calcular_entregas_dia(self):
+        """Calcula entregas do dia selecionado"""
+        data = self.entry_data_entregas.get()
+
+        conn = sqlite3.connect(gm.DB_PATH)
+        cursor = conn.cursor()
+
+        # Tenta buscar de pedidos_delivery se tabela existir
+        try:
+            cursor.execute("""
+                SELECT cliente_nome, total, tipo_entrega
+                FROM pedidos_delivery
+                WHERE DATE(data_hora) = ? AND status = 'entregue'
+                ORDER BY data_hora DESC
+            """, (data,))
+
+            entregas = cursor.fetchall()
+            conn.close()
+
+            if not entregas:
+                resultado = f"Nenhuma entrega concluída em {data}"
+            else:
+                total_entregas = len(entregas)
+                faturamento = sum(e[1] for e in entregas)
+                total_taxas = sum(5.0 for e in entregas if e[2] == 'normal')
+
+                resultado = f"""
+╔════════════════════════════════════════╗
+║    CÁLCULO DE ENTREGAS DO DIA          ║
+╚════════════════════════════════════════╝
+
+📅 Data: {data}
+
+📊 RESUMO:
+   Total de Entregas: {total_entregas}
+   Faturamento Total: R$ {faturamento:.2f}
+   Total de Taxas: R$ {total_taxas:.2f}
+
+════════════════════════════════════════
+
+📦 DETALHES DAS ENTREGAS:
+"""
+                for i, (cliente, valor, tipo) in enumerate(entregas, 1):
+                    icon = "🚴" if tipo == "normal" else "🚗"
+                    resultado += f"\n{i}. {cliente} - R$ {valor:.2f} {icon} {tipo.upper()}"
+
+                resultado += f"\n\n════════════════════════════════════════\nTOTAL A RECEBER: R$ {total_taxas:.2f}"
+
+        except sqlite3.OperationalError:
+            resultado = "Tabela de entregas não encontrada ainda"
+
+        self.text_entregas.config(state="normal")
+        self.text_entregas.delete("1.0", tk.END)
+        self.text_entregas.insert("1.0", resultado)
+        self.text_entregas.config(state="disabled")
 
 # ========== CLASSE CATEGORIASCROLLDELIVERY ==========
 class CategoriaScrollDelivery(ttk.LabelFrame):

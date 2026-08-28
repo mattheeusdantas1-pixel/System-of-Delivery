@@ -13,6 +13,7 @@ import glob
 # Importa o gerenciador de mesas (mesmo usado pelo desktop)
 import gerenciador_mesas as gm
 from cardapio import cardapio, tapioca
+from auth import fazer_login, verificar_token, tem_permissao, listar_usuarios, criar_usuario
 
 # ── Caminhos ──────────────────────────────────────────────────────
 def get_app_path():
@@ -53,6 +54,85 @@ def static_files(filename):
     if os.path.exists(full):
         return send_from_directory(WEBAPP_FOLDER, filename)
     return jsonify({"erro": "Arquivo não encontrado"}), 404
+
+# ══════════════════════════════════════════════════════════════════
+# API — AUTENTICAÇÃO
+# ══════════════════════════════════════════════════════════════════
+@app.route('/api/login', methods=['POST'])
+def api_login():
+    data = request.json
+    email = data.get('email', '').strip()
+    senha = data.get('senha', '')
+
+    if not email or not senha:
+        return jsonify({"status": "erro", "msg": "E-mail e senha obrigatórios"}), 400
+
+    sucesso, token, usuario = fazer_login(email, senha)
+
+    if not sucesso:
+        return jsonify({"status": "erro", "msg": "E-mail ou senha inválidos"}), 401
+
+    return jsonify({
+        "status": "ok",
+        "token": token,
+        "usuario": usuario
+    })
+
+@app.route('/api/verificar-token', methods=['POST'])
+def api_verificar_token():
+    token = request.headers.get('Authorization', '').replace('Bearer ', '')
+
+    if not token:
+        return jsonify({"status": "erro", "msg": "Token não fornecido"}), 401
+
+    valido, usuario = verificar_token(token)
+
+    if not valido:
+        return jsonify({"status": "erro", "msg": "Token inválido ou expirado"}), 401
+
+    return jsonify({
+        "status": "ok",
+        "usuario": usuario
+    })
+
+@app.route('/api/usuarios', methods=['GET'])
+def api_listar_usuarios():
+    token = request.headers.get('Authorization', '').replace('Bearer ', '')
+    valido, usuario = verificar_token(token)
+
+    if not valido or usuario['perfil'] != 'admin':
+        return jsonify({"status": "erro", "msg": "Acesso negado"}), 403
+
+    usuarios = listar_usuarios()
+    return jsonify([{
+        "id": u[0],
+        "email": u[1],
+        "nome": u[2],
+        "perfil": u[3],
+        "ativo": bool(u[4]),
+        "ultimo_acesso": u[5]
+    } for u in usuarios])
+
+@app.route('/api/usuarios', methods=['POST'])
+def api_criar_usuario():
+    token = request.headers.get('Authorization', '').replace('Bearer ', '')
+    valido, usuario = verificar_token(token)
+
+    if not valido or usuario['perfil'] != 'admin':
+        return jsonify({"status": "erro", "msg": "Acesso negado"}), 403
+
+    data = request.json
+    sucesso = criar_usuario(
+        data.get('email'),
+        data.get('senha'),
+        data.get('nome'),
+        data.get('perfil')
+    )
+
+    if not sucesso:
+        return jsonify({"status": "erro", "msg": "Falha ao criar usuário"}), 400
+
+    return jsonify({"status": "ok", "msg": "Usuário criado com sucesso"})
 
 # ══════════════════════════════════════════════════════════════════
 # API — CARDÁPIO
