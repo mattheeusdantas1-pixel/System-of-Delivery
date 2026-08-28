@@ -1,0 +1,28 @@
+=========================
+         🍲 SOPA DA ROXA
+=========================
+Data: 27/08/2026 20:53:39
+Cliente: JEFERSON
+Tel: RETIRADA
+Endereço:
+  RETIRADA RETIRADA
+-------------------------
+ITEM       QTD     R$     TOTAL
+-------------------------
+Carne        1   10.00     10.00
+Costela      2   17.00     34.00
+------------------------------
+TOTAL: R$ 44.00
+------------------------------
+Pagamento: PIX
+==============================
+OBSERVAÇÕES:
+  RETIRADA RETIRADA RETIRADA
+  RETIRADA
+==============================
+
+   Obrigado pela preferência!
+   Sopa da Roxa
+   (81) 99623-5992
+   @sopadaroxa_82
+==============================

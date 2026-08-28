@@ -1,0 +1,26 @@
+=========================
+         🍲 SOPA DA ROXA
+=========================
+Data: 06/08/2026 19:29:36
+Cliente: MARIA
+Tel: 81 8286-9430
+Endereço:
+  RUA ONZE DE AGOSTO, 703
+-------------------------
+ITEM       QTD     R$     TOTAL
+-------------------------
+Carne        2   10.00     20.00
+Charque      1   22.00     22.00
+Taxa de entrega       8.00
+------------------------------
+TOTAL: R$ 50.00
+------------------------------
+Pagamento: Dinheiro
+Sem troco
+==============================
+
+   Obrigado pela preferência!
+   Sopa da Roxa
+   (81) 99623-5992
+   @sopadaroxa_82
+==============================

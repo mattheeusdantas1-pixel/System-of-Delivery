@@ -1,0 +1,28 @@
+=========================
+         🍲 SOPA DA ROXA
+=========================
+Data: 04/08/2026 19:17:20
+Cliente: MICHELINE
+Tel: 81 9881-8802
+Endereço:
+  MIRANTE DO RECIFE - BLOCO C - APT
+  504
+-------------------------
+ITEM       QTD     R$     TOTAL
+-------------------------
+Camarao      1   27.00     27.00
+COCA LATA    1    7.00      7.00
+Taxa de entrega       10.00
+------------------------------
+TOTAL: R$ 44.00
+------------------------------
+Pagamento: Dinheiro
+Recebido: R$ 50.00
+Troco: R$ 6.00
+==============================
+
+   Obrigado pela preferência!
+   Sopa da Roxa
+   (81) 99623-5992
+   @sopadaroxa_82
+==============================

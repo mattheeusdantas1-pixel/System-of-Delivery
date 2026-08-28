@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#6C5CE7">    
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Sopa da Roxa — Garçom</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🍲 Sopa da Roxa</h1>
+  <nav>
+    <a href="/" class="active">Mesas</a>
+    <a href="/delivery">Delivery</a>
+    <a href="/cozinha">Cozinha</a>
+    <a href="/historico">Histórico</a>
+  </nav>
+</header>
+
+<!-- ── TELA MESAS ───────────────────────────────────────────── -->
+<div id="tela-mesas" class="tela active">
+  <div class="tela-header">
+    <span id="info-conexao" class="badge badge-ok">Carregando...</span>
+    <button class="btn-icon" onclick="carregarMesas()">🔄</button>
+  </div>
+  <div id="mesas-grid" class="mesas-grid"></div>
+</div>
+
+<!-- ── TELA PEDIDO ──────────────────────────────────────────── -->
+<div id="tela-pedido" class="tela">
+
+  <div class="pedido-topbar">
+    <button class="btn-voltar" onclick="voltarParaMesas()">← Voltar</button>
+    <h2 id="titulo-mesa">Mesa ?</h2>
+    <span id="badge-status" class="badge"></span>
+  </div>
+
+  <div class="pedido-container">
+
+    <!-- ESQUERDA (CARDÁPIO) -->
+    <div class="pedido-esquerda">
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="tab-sopas">🥣 Sopas</button>
+        <button class="tab-btn" data-tab="tab-tapiocas">🌮 Tapiocas</button>
+        <button class="tab-btn" data-tab="tab-bebidas">🥤 Bebidas</button>
+      </div>
+
+      <div id="tab-sopas" class="tab-content active">
+        <div id="lista-sopas" class="produtos-grid"></div>
+      </div>
+
+      <div id="tab-tapiocas" class="tab-content">
+        <div id="lista-tapiocas" class="produtos-grid"></div>
+      </div>
+
+      <div id="tab-bebidas" class="tab-content">
+        <div class="bebida-form card">
+          <input id="bebida-nome" placeholder="Nome">
+          <input id="bebida-preco" type="number" placeholder="Preço">
+          <button onclick="adicionarBebida()">Adicionar</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- DIREITA (PEDIDO SEMPRE VISÍVEL) -->
+    <div class="pedido-direita">
+      <h3>📋 Pedido</h3>
+      <div id="itens-pedido" class="itens-lista"></div>
+
+      <textarea id="obs-texto" placeholder="Observações..." onblur="salvarObs()"></textarea>
+
+      <div style="margin-top:auto">
+        <h3>Total: R$ <span id="total-valor">0.00</span></h3>
+
+        <button class="btn btn-cozinha" onclick="enviarCozinha()">🍳 Enviar</button>
+        <button class="btn btn-fechar" onclick="abrirFecharConta()">💳 Fechar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+  <!-- Abas do cardápio -->
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="tab-sopas">🥣 Sopas</button>
+    <button class="tab-btn" data-tab="tab-tapiocas">🌮 Tapiocas</button>
+    <button class="tab-btn" data-tab="tab-bebidas">🥤 Bebidas</button>
+    <button class="tab-btn" data-tab="tab-pedido">📋 Pedido</button>
+  </div>
+
+  <div id="tab-sopas" class="tab-content active">
+    <div id="lista-sopas" class="produtos-grid"></div>
+  </div>
+  <div id="tab-tapiocas" class="tab-content">
+    <div id="lista-tapiocas" class="produtos-grid"></div>
+  </div>
+  <div id="tab-bebidas" class="tab-content">
+    <div class="bebida-form card">
+      <h3>Adicionar Bebida</h3>
+      <input id="bebida-nome" type="text" placeholder="Nome (ex: Coca-cola 1L)" class="input-field">
+      <input id="bebida-preco" type="number" step="0.01" placeholder="Preço (R$)" class="input-field">
+      <button class="btn btn-primary" onclick="adicionarBebida()">➕ Adicionar</button>
+    </div>
+  </div>
+  <div id="tab-pedido" class="tab-content">
+    <div id="itens-pedido" class="itens-lista"></div>
+    <div class="obs-box">
+      <textarea id="obs-texto" placeholder="Observações..." rows="3" onblur="salvarObs()"></textarea>
+    </div>
+  </div>
+
+  <!-- Rodapé fixo -->
+  <div class="pedido-footer">
+    <div class="total-box">Total: <strong>R$ <span id="total-valor">0.00</span></strong></div>
+    <div class="footer-btns">
+      <button class="btn btn-cozinha" onclick="enviarCozinha()">🍳 Enviar p/ Cozinha</button>
+      <button class="btn btn-fechar" onclick="abrirFecharConta()">💳 Fechar Conta</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── MODAL FECHAR CONTA ───────────────────────────────────── -->
+<div id="modal-fechar" class="modal-overlay" style="display:none">
+  <div class="modal-box">
+    <h2>💳 Fechar Conta</h2>
+    <p id="modal-mesa-info" style="margin-bottom:12px;color:#636E72"></p>
+
+    <label class="label">Forma de pagamento</label>
+    <div class="radio-group">
+      <label><input type="radio" name="pagamento" value="pix" checked> PIX</label>
+      <label><input type="radio" name="pagamento" value="cartao"> Cartão</label>
+      <label><input type="radio" name="pagamento" value="dinheiro"> Dinheiro</label>
+    </div>
+
+    <div id="grupo-dinheiro" style="display:none;margin-top:8px">
+      <label class="label">Valor recebido (R$)</label>
+      <input id="valor-recebido" type="number" step="0.01" class="input-field" oninput="calcularTroco()">
+      <p id="info-troco" class="troco-info"></p>
+    </div>
+
+    <div style="margin-top:12px">
+      <label>
+        <input type="checkbox" id="chk-dividir" onchange="toggleDividir()">
+        Dividir conta
+      </label>
+      <div id="grupo-dividir" style="display:none;margin-top:8px">
+        <label class="label">Número de pessoas</label>
+        <input id="num-pessoas" type="number" min="2" value="2" class="input-field" oninput="calcularDivisao()">
+        <p id="info-divisao" class="troco-info"></p>
+      </div>
+    </div>
+
+    <div style="margin-top:12px">
+      <label>
+        <input type="checkbox" id="chk-embalagem" onchange="toggleEmbalagem()">
+        Embalagens para viagem
+      </label>
+      <div id="grupo-embalagem" style="display:none;margin-top:8px">
+        <label class="label">Quantidade (R$2 cada)</label>
+        <input id="qtd-embalagem" type="number" min="1" value="1" class="input-field" oninput="atualizarTotalModal()">
+      </div>
+    </div>
+
+    <p id="total-modal" style="margin-top:14px;font-size:1.2rem;font-weight:bold;color:#6C5CE7"></p>
+
+    <div class="modal-btns">
+      <button class="btn btn-secundario" onclick="fecharModal()">Cancelar</button>
+      <button class="btn btn-primary" onclick="confirmarFechamento()">✅ Confirmar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── MODAL CUPOM ──────────────────────────────────────────── -->
+<div id="modal-cupom" class="modal-overlay" style="display:none">
+  <div class="modal-box">
+    <h2>🧾 Cupom</h2>
+    <pre id="cupom-texto" class="cupom-pre"></pre>
+    <div class="modal-btns">
+      <button class="btn btn-secundario" onclick="document.getElementById('modal-cupom').style.display='none';voltarParaMesas()">Fechar</button>
+      <button class="btn btn-primary" onclick="enviarWhatsapp()">📲 WhatsApp</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

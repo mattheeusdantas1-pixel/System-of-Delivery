@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sopa da Roxa — Cozinha</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-cozinha.css">
+</head>
+<body>
+<header>
+  <h1>🍳 Cozinha</h1>
+  <nav>
+    <a href="index.html">Mesas</a>
+    <a href="delivery.html">Delivery</a>
+    <a href="cozinha.html" class="active">Cozinha</a>
+    <a href="historico.html">Histórico</a>
+  </nav>
+</header>
+
+<div class="cozinha-container">
+  <h2 style="font-size:1rem;color:#636E72;padding:0 4px">🆕 Novos Pedidos</h2>
+  <div id="col-novos" class="grid-cozinha"></div>
+
+  <h2 style="font-size:1rem;color:#636E72;padding:0 4px;margin-top:8px">🍳 Preparando</h2>
+  <div id="col-preparando" class="grid-cozinha"></div>
+</div>
+
+<!-- CONFIG IP -->
+<div id="config-ip-overlay" class="modal-overlay" style="display:none">
+  <div class="modal-box" style="text-align:center">
+    <h2 style="color:#6C5CE7">⚙️ Servidor</h2>
+    <input id="config-ip-input" type="text" placeholder="Ex: 192.168.1.10" class="input-field" style="text-align:center">
+    <button class="btn btn-primary" style="width:100%;margin-top:12px" onclick="salvarIP()">Conectar</button>
+  </div>
+</div>
+
+<script src="cozinha.js"></script>
+</body>
+</html>

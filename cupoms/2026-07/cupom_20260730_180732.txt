@@ -1,0 +1,27 @@
+=========================
+         🍲 SOPA DA ROXA
+=========================
+Data: 30/07/2026 18:07:32
+Cliente: LIDIA
+Tel: 81 9240-9944
+Endereço:
+  HOTEL SWEET LOVE
+-------------------------
+ITEM       QTD     R$     TOTAL
+-------------------------
+Carne        1   10.00     10.00
+Cebola       1   18.00     18.00
+Taxa de entrega       10.00
+------------------------------
+TOTAL: R$ 38.00
+------------------------------
+Pagamento: Dinheiro
+Recebido: R$ 100.00
+Troco: R$ 62.00
+==============================
+
+   Obrigado pela preferência!
+   Sopa da Roxa
+   (81) 99623-5992
+   @sopadaroxa_82
+==============================

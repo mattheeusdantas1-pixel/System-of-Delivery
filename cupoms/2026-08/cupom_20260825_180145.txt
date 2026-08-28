@@ -1,0 +1,26 @@
+=========================
+         🍲 SOPA DA ROXA
+=========================
+Data: 25/08/2026 18:01:45
+Cliente: TAMIRES
+Tel: 81 8314-1280
+Endereço:
+  CON. RESD. ROSA AMARELA - APRIGIO
+  GUIMARAES, 230 - BLOCO B APT 06
+-------------------------
+ITEM       QTD     R$     TOTAL
+-------------------------
+Carne        1   10.00     10.00
+Charque      2   22.00     44.00
+Taxa de entrega       6.00
+------------------------------
+TOTAL: R$ 60.00
+------------------------------
+Pagamento: PIX
+==============================
+
+   Obrigado pela preferência!
+   Sopa da Roxa
+   (81) 99623-5992
+   @sopadaroxa_82
+==============================

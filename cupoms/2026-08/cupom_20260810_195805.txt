@@ -1,0 +1,26 @@
+=========================
+         🍲 SOPA DA ROXA
+=========================
+Data: 10/08/2026 19:58:05
+Cliente: NINHA
+Tel: 81 9224-5489
+Endereço:
+  RUA URUPES, 64
+-------------------------
+ITEM       QTD     R$     TOTAL
+-------------------------
+Carne        1   10.00     10.00
+Taxa de entrega       8.00
+------------------------------
+TOTAL: R$ 18.00
+------------------------------
+Pagamento: Dinheiro
+Recebido: R$ 50.00
+Troco: R$ 32.00
+==============================
+
+   Obrigado pela preferência!
+   Sopa da Roxa
+   (81) 99623-5992
+   @sopadaroxa_82
+==============================

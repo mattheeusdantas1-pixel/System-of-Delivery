@@ -1,0 +1,25 @@
+=========================
+         🍲 SOPA DA ROXA
+=========================
+Data: 18/08/2026 18:25:28
+Cliente: LUCAS
+Tel: 81 8338-5059
+Endereço:
+  RUA CANNAA,14A
+-------------------------
+ITEM       QTD     R$     TOTAL
+-------------------------
+Carne        2   10.00     20.00
+Taxa de entrega       10.00
+------------------------------
+TOTAL: R$ 30.00
+------------------------------
+Pagamento: Dinheiro
+Sem troco
+==============================
+
+   Obrigado pela preferência!
+   Sopa da Roxa
+   (81) 99623-5992
+   @sopadaroxa_82
+==============================

@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 *)",
+      "Bash(pkill -f \"python3 server.py\")",
+      "Bash(curl -s http://localhost:5000/api/mesas)",
+      "Bash(curl -s \"http://localhost:5000/api/calculo-entregas?data=2026-08-28\")",
+      "Bash(curl -s http://localhost:5000/api/cupons/meses)",
+      "Bash(curl -s http://localhost:5000/api/pedidos-delivery/ativos)",
+      "Bash(curl -s http://localhost:5000/api/cupons/2026-08)",
+      "Bash(curl -s -X DELETE \"http://localhost:5000/api/cupons/2026-08/cupom_mesa_20260828_182905.txt\")",
+      "Bash(curl -s -X DELETE \"http://localhost:5000/api/cupons/2026-08/cupom_20260828_173832.txt\")",
+      "Bash(kill %1)",
+      "Bash(grep -E \"\\\\.\\(html|js|css\\)$\")",
+      "Bash(curl -s http://localhost:5000/delivery)",
+      "Bash(curl -s http://localhost:5000/cozinha)",
+      "Bash(curl -s http://localhost:5000/historico)",
+      "Bash(curl -s http://localhost:5000/api/cardapio)",
+      "Bash(curl -s -X POST http://localhost:5000/api/pedido-delivery -H 'Content-Type: application/json' -d '{ *)",
+      "Bash(git init *)",
+      "Bash(git config *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}

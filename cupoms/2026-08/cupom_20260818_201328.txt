@@ -1,0 +1,24 @@
+=========================
+         🍲 SOPA DA ROXA
+=========================
+Data: 18/08/2026 20:13:28
+Cliente: JOSE
+Tel: 81 9354-5171
+Endereço:
+  RUA A, MERCADINHO DE BETO
+-------------------------
+ITEM       QTD     R$     TOTAL
+-------------------------
+Carne        1   10.00     10.00
+Taxa de entrega       5.00
+------------------------------
+TOTAL: R$ 15.00
+------------------------------
+Pagamento: PIX
+==============================
+
+   Obrigado pela preferência!
+   Sopa da Roxa
+   (81) 99623-5992
+   @sopadaroxa_82
+==============================

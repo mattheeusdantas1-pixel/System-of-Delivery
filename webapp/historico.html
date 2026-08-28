@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sopa da Roxa — Histórico</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-historico.css">
+</head>
+<body>
+<header>
+  <h1>📜 Histórico</h1>
+  <nav>
+    <a href="/">Mesas</a>
+    <a href="/delivery">Delivery</a>
+    <a href="/cozinha">Cozinha</a>
+    <a href="/historico" class="active">Histórico</a>
+  </nav>
+</header>
+
+<div class="hist-container">
+  <div class="hist-sidebar">
+    <h3>📁 Meses</h3>
+    <div id="meses-lista" class="meses-lista"></div>
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #dfe6e9">
+
+    <h3>🚴 Cálculo de Entregas</h3>
+    <div style="font-size:0.9rem;color:#636E72;margin-bottom:12px">
+      Selecione a data para calcular entregas do dia
+    </div>
+    <input id="data-calculo" type="date" class="input-field" style="font-size:0.9rem">
+    <button class="btn btn-primary" style="width:100%;margin-top:8px;font-size:0.9rem" onclick="abrirCalculadoraEntregas()">📊 Ver</button>
+  </div>
+  <div class="hist-main">
+    <div id="cupons-lista" class="cupons-lista"></div>
+    <div id="cupom-box" class="cupom-box" style="display:none">
+      <pre id="cupom-conteudo" class="cupom-pre"></pre>
+      <div class="hist-btns">
+        <button class="btn btn-secundario" onclick="reimprimirCupom()">🖨️ Imprimir</button>
+        <button class="btn btn-primary" onclick="whatsappCupom()">📲 WhatsApp</button>
+        <button class="btn btn-secundario" style="background:#e17055" onclick="excluirCupom()">🗑️ Excluir</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL CALCULADORA -->
+<div id="modal-calculadora" class="modal-overlay" style="display:none">
+  <div class="modal-box">
+    <h2>💰 Cálculo de Entregas</h2>
+    <div id="calculo-conteudo" style="font-size:0.9rem;line-height:1.6"></div>
+    <div class="modal-btns">
+      <button class="btn btn-primary" onclick="fecharCalculadora()">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<script src="historico.js"></script>
+</body>
+</html>

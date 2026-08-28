@@ -1,0 +1,306 @@
+/* ── Delivery Container ─────────────────────────────────────────── */
+.delivery-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(108,92,231,.1);
+}
+
+.section h2 {
+  font-size: 1.1rem;
+  color: var(--roxo);
+  margin-bottom: 8px;
+  border-bottom: 2px solid var(--roxo);
+  padding-bottom: 8px;
+}
+
+/* ── Form Groups ────────────────────────────────────────────────── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group .input-field {
+  padding: 10px 12px;
+  border: 1.5px solid var(--borda);
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.form-group .input-field:focus {
+  outline: none;
+  border-color: var(--roxo);
+  box-shadow: 0 0 0 3px rgba(108,92,231,.12);
+}
+
+/* ── Radio Group ────────────────────────────────────────────────── */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.radio-group input[type="radio"] {
+  cursor: pointer;
+  accent-color: var(--roxo);
+}
+
+/* ── Pedido Lateral ─────────────────────────────────────────────── */
+.pedido-lateral {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 16px;
+  background: var(--fundo);
+  border-radius: 12px;
+  border-left: 4px solid var(--roxo);
+}
+
+.pedido-lateral h3 {
+  font-size: 1rem;
+  color: var(--roxo);
+  margin: 0;
+}
+
+.itens-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.item-linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid var(--borda);
+  font-size: 0.9rem;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.item-nome {
+  font-weight: 600;
+  color: var(--texto);
+}
+
+.item-qtd {
+  font-size: 0.8rem;
+  color: var(--suave);
+}
+
+.btn-remover {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.btn-remover:hover {
+  opacity: 0.7;
+}
+
+.obs-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.obs-box textarea {
+  padding: 8px;
+  border: 1.5px solid var(--borda);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  resize: vertical;
+  min-height: 50px;
+}
+
+.obs-box textarea:focus {
+  outline: none;
+  border-color: var(--roxo);
+  box-shadow: 0 0 0 3px rgba(108,92,231,.12);
+}
+
+.total-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.total-section > div {
+  display: flex;
+  justify-content: space-between;
+  color: var(--suave);
+}
+
+.total-grande {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--roxo);
+  border-top: 2px solid var(--borda);
+  padding-top: 8px;
+}
+
+/* ── Pedidos Lista ──────────────────────────────────────────────── */
+.pedidos-lista {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.pedido-delivery-card {
+  padding: 16px;
+  border-radius: 12px;
+  border-left: 4px solid var(--laranja);
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  transition: .2s;
+}
+
+.pedido-delivery-card.status-pendente {
+  border-left-color: var(--amarelo);
+  background: rgba(253, 203, 110, .05);
+}
+
+.pedido-delivery-card.status-preparando {
+  border-left-color: var(--laranja);
+  background: rgba(225, 112, 85, .05);
+}
+
+.pedido-delivery-card.status-pronto {
+  border-left-color: var(--verde);
+  background: rgba(0, 184, 148, .05);
+}
+
+.pedido-delivery-card.status-em_entrega {
+  border-left-color: var(--roxo);
+  background: rgba(108, 92, 231, .05);
+}
+
+.pedido-delivery-card.status-entregue {
+  border-left-color: var(--verde);
+  background: rgba(0, 184, 148, .05);
+  opacity: 0.7;
+}
+
+.delivery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--borda);
+}
+
+.delivery-header strong {
+  font-size: 1rem;
+  color: var(--texto);
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 16px;
+  background: var(--laranja);
+  color: white;
+}
+
+.delivery-info {
+  font-size: 0.9rem;
+  color: var(--suave);
+  margin-bottom: 8px;
+  gap: 4px;
+}
+
+.delivery-itens {
+  font-size: 0.85rem;
+  color: var(--texto);
+  margin-bottom: 8px;
+  line-height: 1.4;
+  padding: 8px;
+  background: var(--fundo);
+  border-radius: 6px;
+}
+
+.delivery-total {
+  font-weight: 700;
+  color: var(--roxo);
+  margin-bottom: 8px;
+}
+
+.delivery-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.delivery-controls .input-field {
+  flex: 1;
+  padding: 8px;
+  font-size: 0.85rem;
+}
+
+/* ── Responsivo ─────────────────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .delivery-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .delivery-container {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .section {
+    padding: 16px;
+  }
+
+  .produtos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .delivery-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

@@ -1,0 +1,28 @@
+=========================
+         🍲 SOPA DA ROXA
+=========================
+Data: 03/08/2026 19:17:14
+Cliente: GABRIELA
+Tel: 81 9475- 4198
+Endereço:
+  RUA PRESIDENTE OLEGARIO MACIEL,
+  202
+-------------------------
+ITEM       QTD     R$     TOTAL
+-------------------------
+Carne        1   10.00     10.00
+Africana     1   18.00     18.00
+Taxa de entrega       8.00
+------------------------------
+TOTAL: R$ 36.00
+------------------------------
+Pagamento: Dinheiro
+Recebido: R$ 50.00
+Troco: R$ 14.00
+==============================
+
+   Obrigado pela preferência!
+   Sopa da Roxa
+   (81) 99623-5992
+   @sopadaroxa_82
+==============================

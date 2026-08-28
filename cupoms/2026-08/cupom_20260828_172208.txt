@@ -1,0 +1,26 @@
+=========================
+         🍲 SOPA DA ROXA
+=========================
+Data: 28/08/2026 17:22:08
+Cliente: DAIANA
+Tel: 81 9627-0666
+Endereço:
+  RUA LEANDRO BARRETO, 260
+-------------------------
+ITEM       QTD     R$     TOTAL
+-------------------------
+Carne        1   10.00     10.00
+Charque      1   22.00     22.00
+Camarao      1   27.00     27.00
+Taxa de entrega       8.00
+------------------------------
+TOTAL: R$ 67.00
+------------------------------
+Pagamento: PIX
+==============================
+
+   Obrigado pela preferência!
+   Sopa da Roxa
+   (81) 99623-5992
+   @sopadaroxa_82
+==============================

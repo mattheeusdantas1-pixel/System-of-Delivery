@@ -1,0 +1,27 @@
+=========================
+         🍲 SOPA DA ROXA
+=========================
+Data: 15/07/2026 19:06:03
+Cliente: EMANUELA
+Tel: 81 9648-4197
+Endereço:
+  RUA LEONARDO DA VINCI, 96 -APT
+  206B- COND ALAMEDA EUCALIPTO.
+-------------------------
+ITEM       QTD     R$     TOTAL
+-------------------------
+Carne        1   10.00     10.00
+Costela      1   17.00     17.00
+TP. Frango c/Queijo Coalho   1   17.00     17.00
+Taxa de entrega       15.00
+------------------------------
+TOTAL: R$ 59.00
+------------------------------
+Pagamento: PIX
+==============================
+
+   Obrigado pela preferência!
+   Sopa da Roxa
+   (81) 99623-5992
+   @sopadaroxa_82
+==============================

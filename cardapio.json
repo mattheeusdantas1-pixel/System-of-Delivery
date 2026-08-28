@@ -1,0 +1,94 @@
+{
+    "sopas": [
+        {
+            "nome": "Carne",
+            "preco": 10.0
+        },
+        {
+            "nome": "Canja",
+            "preco": 10.0
+        },
+        {
+            "nome": "Costela",
+            "preco": 17.0
+        },
+        {
+            "nome": "4 Queijos",
+            "preco": 18.0
+        },
+        {
+            "nome": "Charque",
+            "preco": 22.0
+        },
+        {
+            "nome": "Queijo do Reino",
+            "preco": 27.0
+        },
+        {
+            "nome": "Africana",
+            "preco": 18.0
+        },
+        {
+            "nome": "Costela ao Queijo",
+            "preco": 20.0
+        },
+        {
+            "nome": "Camarao",
+            "preco": 27.0
+        },
+        {
+            "nome": "Cebola",
+            "preco": 18.0
+        },
+        {
+            "nome": "Batata com costela",
+            "preco": 20.0
+        },
+        {
+            "nome": "Batata com calabresa",
+            "preco": 20.0
+        }
+    ],
+    "tapiocas": [
+        {
+            "nome": "Coco",
+            "preco": 10.0
+        },
+        {
+            "nome": "TP. Coco c/L. Cond.",
+            "preco": 15.0
+        },
+        {
+            "nome": "TP. Queijo coalho",
+            "preco": 12.0
+        },
+        {
+            "nome": "TP. Queijo coalho C/Coco",
+            "preco": 15.0
+        },
+        {
+            "nome": "TP. Queijo coalho c/Coco e L.Cond.",
+            "preco": 17.0
+        },
+        {
+            "nome": "TP. Frango c/Queijo Coalho",
+            "preco": 17.0
+        },
+        {
+            "nome": "TP. Pizza",
+            "preco": 17.0
+        },
+        {
+            "nome": "TP. Charque c/Queijo Coalho",
+            "preco": 22.0
+        },
+        {
+            "nome": "TP. Camarao",
+            "preco": 25.0
+        },
+        {
+            "nome": "TP. Queijo do Reino",
+            "preco": 25.0
+        }
+    ]
+}

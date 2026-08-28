@@ -1,0 +1,28 @@
+=========================
+         🍲 SOPA DA ROXA
+=========================
+Data: 24/08/2026 18:22:10
+Cliente: JULIANE
+Tel: 81 9105-4387
+Endereço:
+  AV. PADRE IBIAPINA - BLOCO 2 - APT
+  007
+-------------------------
+ITEM       QTD     R$     TOTAL
+-------------------------
+Carne        1   10.00     10.00
+Costela      1   17.00     17.00
+Taxa de entrega       6.00
+------------------------------
+TOTAL: R$ 33.00
+------------------------------
+Pagamento: Dinheiro
+Recebido: R$ 50.00
+Troco: R$ 17.00
+==============================
+
+   Obrigado pela preferência!
+   Sopa da Roxa
+   (81) 99623-5992
+   @sopadaroxa_82
+==============================

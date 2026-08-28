@@ -1,0 +1,25 @@
+=========================
+         🍲 SOPA DA ROXA
+=========================
+Data: 18/08/2026 17:27:49
+Cliente: SILVIO
+Tel: RETIRADA
+Endereço:
+  RETIRADA
+-------------------------
+ITEM       QTD     R$     TOTAL
+-------------------------
+Carne        2   10.00     20.00
+Camarao      1   27.00     27.00
+TP. Frango c/Queijo Coalho   1   17.00     17.00
+------------------------------
+TOTAL: R$ 64.00
+------------------------------
+Pagamento: PIX
+==============================
+
+   Obrigado pela preferência!
+   Sopa da Roxa
+   (81) 99623-5992
+   @sopadaroxa_82
+==============================

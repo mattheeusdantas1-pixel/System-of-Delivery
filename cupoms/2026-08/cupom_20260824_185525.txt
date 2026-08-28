@@ -1,0 +1,33 @@
+=========================
+         🍲 SOPA DA ROXA
+=========================
+Data: 24/08/2026 18:55:25
+Cliente: RODRIGO
+Tel: 81 8877-9952
+Endereço:
+  RUA DR. METODIO MARANHAO, 352
+-------------------------
+ITEM       QTD     R$     TOTAL
+-------------------------
+Carne        1   10.00     10.00
+Costela      2   17.00     34.00
+Charque      2   22.00     44.00
+Taxa de entrega       10.00
+------------------------------
+TOTAL: R$ 98.00
+------------------------------
+Pagamento: PIX
+==============================
+OBSERVAÇÕES:
+  AS SOPA DE CHARQUE COM O QUEIJO
+  COALHO SEPARADO!! 
+AS SOPA DE
+  CHARQUE COM O QUEIJO COALHO
+  SEPARADO!!
+==============================
+
+   Obrigado pela preferência!
+   Sopa da Roxa
+   (81) 99623-5992
+   @sopadaroxa_82
+==============================

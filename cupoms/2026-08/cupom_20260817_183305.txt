@@ -1,0 +1,27 @@
+=========================
+         🍲 SOPA DA ROXA
+=========================
+Data: 17/08/2026 18:33:05
+Cliente: MATHEUS
+Tel: 81 9481-9418
+Endereço:
+  RUA APRIGIO GUIMARAES, 230
+-------------------------
+ITEM       QTD     R$     TOTAL
+-------------------------
+Charque      1   22.00     22.00
+Camarao      2   27.00     54.00
+Taxa de entrega       5.00
+------------------------------
+TOTAL: R$ 81.00
+------------------------------
+Pagamento: Dinheiro
+Recebido: R$ 100.00
+Troco: R$ 19.00
+==============================
+
+   Obrigado pela preferência!
+   Sopa da Roxa
+   (81) 99623-5992
+   @sopadaroxa_82
+==============================

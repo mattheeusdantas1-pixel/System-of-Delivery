@@ -1,0 +1,26 @@
+=========================
+         🍲 SOPA DA ROXA
+=========================
+Data: 18/08/2026 18:30:28
+Cliente: ELVIS
+Tel: 81 8667-9183
+Endereço:
+  RUA ZELIA BARBOSA, 13
+-------------------------
+ITEM       QTD     R$     TOTAL
+-------------------------
+Carne        1   10.00     10.00
+Cebola       2   18.00     36.00
+Taxa de entrega       8.00
+------------------------------
+TOTAL: R$ 54.00
+------------------------------
+Pagamento: Dinheiro
+Sem troco
+==============================
+
+   Obrigado pela preferência!
+   Sopa da Roxa
+   (81) 99623-5992
+   @sopadaroxa_82
+==============================

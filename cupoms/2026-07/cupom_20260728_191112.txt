@@ -1,0 +1,25 @@
+=========================
+         🍲 SOPA DA ROXA
+=========================
+Data: 28/07/2026 19:11:12
+Cliente: ALICE
+Tel: 81 9272-2862
+Endereço:
+  AVENIDA LIBERDADE, 638
+-------------------------
+ITEM       QTD     R$     TOTAL
+-------------------------
+Costela      1   17.00     17.00
+Taxa de entrega       7.00
+------------------------------
+TOTAL: R$ 24.00
+------------------------------
+Pagamento: Dinheiro
+Sem troco
+==============================
+
+   Obrigado pela preferência!
+   Sopa da Roxa
+   (81) 99623-5992
+   @sopadaroxa_82
+==============================

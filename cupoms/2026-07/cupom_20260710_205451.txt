@@ -1,0 +1,26 @@
+=========================
+         🍲 SOPA DA ROXA
+=========================
+Data: 10/07/2026 20:54:51
+Cliente: THAMI
+Tel: 81 9115-6222
+Endereço:
+  BOTANICO - BLOCO E1 - APT 104
+-------------------------
+ITEM       QTD     R$     TOTAL
+-------------------------
+Carne        2   10.00     20.00
+Taxa de entrega       5.00
+------------------------------
+TOTAL: R$ 25.00
+------------------------------
+Pagamento: Dinheiro
+Recebido: R$ 30.00
+Troco: R$ 5.00
+==============================
+
+   Obrigado pela preferência!
+   Sopa da Roxa
+   (81) 99623-5992
+   @sopadaroxa_82
+==============================

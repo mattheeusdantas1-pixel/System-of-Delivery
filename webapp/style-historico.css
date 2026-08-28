@@ -1,0 +1,101 @@
+.hist-container { display: flex; flex: 1; overflow: hidden; gap: 0; }
+
+.hist-sidebar {
+  width: 240px; min-width: 160px;
+  background: white;
+  border-right: 1px solid var(--borda);
+  padding: 14px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+.hist-sidebar h3 { font-size: .9rem; color: var(--suave); margin-bottom: 10px; font-weight: 600; }
+.hist-sidebar hr { border: none; border-top: 1px solid var(--borda); }
+
+.meses-lista { display: flex; flex-direction: column; gap: 6px; }
+.mes-btn {
+  background: var(--roxo-claro); border: none;
+  border-radius: 10px; padding: 8px 12px;
+  font-size: .88rem; font-weight: 600;
+  text-align: left; cursor: pointer;
+  color: var(--texto); transition: .12s;
+}
+.mes-btn:hover { background: #ddd6fe; }
+.mes-btn.active { background: var(--roxo); color: white; }
+
+.hist-main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+.cupons-lista {
+  padding: 12px;
+  display: flex; flex-wrap: wrap;
+  gap: 8px; border-bottom: 1px solid var(--borda);
+  max-height: 140px; overflow-y: auto;
+  flex-shrink: 0;
+}
+.cupom-btn {
+  background: var(--roxo-claro); border: none;
+  border-radius: 10px; padding: 6px 12px;
+  font-size: .8rem; font-weight: 600;
+  cursor: pointer; color: var(--texto); transition: .12s;
+}
+.cupom-btn:hover { background: #ddd6fe; }
+.cupom-btn.active { background: var(--roxo); color: white; }
+
+.cupom-box { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+
+.cupom-pre {
+  background: var(--fundo); border-radius: 12px;
+  border: 1px solid var(--borda);
+  padding: 14px; font-family: 'Courier New', monospace;
+  font-size: .78rem; white-space: pre-wrap;
+  flex: 1; overflow-y: auto;
+  color: var(--texto);
+}
+
+.hist-btns { display: flex; gap: 10px; }
+.hist-btns .btn { flex: 1; justify-content: center; }
+
+/* Modal Calculadora */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.4);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-box {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,.2);
+}
+
+.modal-box h2 {
+  color: var(--roxo);
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+}
+
+.modal-btns {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-btns .btn {
+  flex: 1;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .hist-sidebar { width: 120px; }
+}

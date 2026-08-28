@@ -1,0 +1,27 @@
+=========================
+         🍲 SOPA DA ROXA
+=========================
+Data: 17/08/2026 20:16:01
+Cliente: JOAO VITOR
+Tel: 81 8556-8392
+Endereço:
+  RUA LADEIRA DA COLINA, 673
+-------------------------
+ITEM       QTD     R$     TOTAL
+-------------------------
+TP. Frango c/Queijo Coalho   1   17.00     17.00
+TP. Pizza    1   17.00     17.00
+Taxa de entrega       8.00
+------------------------------
+TOTAL: R$ 42.00
+------------------------------
+Pagamento: Dinheiro
+Recebido: R$ 50.00
+Troco: R$ 8.00
+==============================
+
+   Obrigado pela preferência!
+   Sopa da Roxa
+   (81) 99623-5992
+   @sopadaroxa_82
+==============================

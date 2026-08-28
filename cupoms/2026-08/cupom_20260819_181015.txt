@@ -1,0 +1,26 @@
+=========================
+         🍲 SOPA DA ROXA
+=========================
+Data: 19/08/2026 18:10:15
+Cliente: FRANCIELLY
+Tel: 81 9399-2760
+Endereço:
+  LUIZ PAZ DE ANDRADE, 37
+-------------------------
+ITEM       QTD     R$     TOTAL
+-------------------------
+Carne        1   10.00     10.00
+Taxa de entrega       6.00
+------------------------------
+TOTAL: R$ 16.00
+------------------------------
+Pagamento: Dinheiro
+Recebido: R$ 20.00
+Troco: R$ 4.00
+==============================
+
+   Obrigado pela preferência!
+   Sopa da Roxa
+   (81) 99623-5992
+   @sopadaroxa_82
+==============================
